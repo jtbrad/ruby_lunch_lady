@@ -31,7 +31,7 @@ class RubyLunchLady
     
     case gets.strip
       when "y"
-        get_add_on
+        get_add_on_dish
         get_add_ons
       when "n"
   
@@ -52,8 +52,9 @@ class RubyLunchLady
     get_selection(@menu.side_dishes)
   end
   
-  def get_add_on
+  def get_add_on_dish
     @menu.print_add_on_dishes
+    get_selection(@menu.add_on_dishes)
   end
 
   def get_selection(dishes)

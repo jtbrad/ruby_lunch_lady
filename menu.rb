@@ -9,15 +9,22 @@ class Menu
   def initialize
 
     @main_dishes = [
-      Dish.new("Hamburger", 5.00)
+      Dish.new("Chicken Sandwich", 3.00),
+      Dish.new("Hamburger", 5.00),
+      Dish.new("Hot Dog", 2.50)
     ]
 
     @side_dishes = [
-      Dish.new("French Fries", 1.00)
+      Dish.new("French Fries", 1.00),
+      Dish.new("Salad", 1.50),
+      Dish.new("Sweet Potato Fries", 1.50)
     ]
 
     @add_on_dishes = [
-      Dish.new("Ice Cream Cone", 1.00)
+      Dish.new("Ice Cream", 1.00),
+      Dish.new("Jello Cup", 0.50),
+      Dish.new("Milk", 0.50),
+      Dish.new("Orange Juice", 1.00)
     ]
 
   end
