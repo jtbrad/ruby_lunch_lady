@@ -2,11 +2,13 @@ require "pry"
 require "colorize"
 
 require_relative "dish"
+require_relative "menu"
 
 class RubyLunchLady
 
   def initialize
     @order = []
+    @menu = Menu.new
     @main_dishes = [Dish.new("Hamburger", 5.00)]
     @side_dishes = [Dish.new("French Fries", 1.00)]
     puts "--- Welcome to Ruby High School Lunch Program ---".colorize(:red)
@@ -18,14 +20,10 @@ class RubyLunchLady
   
   def get_main_dish
     puts "What can I get for you?"
-    puts "--- Main Dishes ---"
-    
-    @main_dishes.each_with_index do |main_dish, index|
-      puts "#{index + 1}. #{main_dish.name}"
-    end
+    @menu.print_main_dishes
     
     print "Make a selection: >"
-    @order << @main_dishes[gets.to_i - 1]    
+    @order << @menu.main_dishes[gets.to_i - 1]   
   end
 
   def get_side_dish
@@ -38,6 +36,10 @@ class RubyLunchLady
 
     print "Make a selection: >"
     @order << @side_dishes[gets.to_i - 1]
+  end
+
+  def get_add_on
+
   end
   
   def get_order
