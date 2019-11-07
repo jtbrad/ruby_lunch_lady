@@ -21,9 +21,12 @@ class RubyLunchLady
   def get_main_dish
     puts "What can I get for you?"
     @menu.print_main_dishes
-    
+    get_selection(@menu.main_dishes) 
+  end
+
+  def get_selection(dishes)
     print "Make a selection: >"
-    @order << @menu.main_dishes[gets.to_i - 1]   
+    @order << dishes[gets.to_i - 1]
   end
 
   def get_side_dish
