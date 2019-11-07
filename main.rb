@@ -11,7 +11,8 @@ class RubyLunchLady
     @menu = Menu.new
     
     puts "--- Welcome to Ruby High School Lunch Program ---".colorize(:red)
-    get_meal
+    get_meal    
+    get_add_ons   
     get_order  
   end
   
@@ -23,6 +24,22 @@ class RubyLunchLady
     get_side_dish
     puts "Select your second side."
     get_side_dish
+  end
+  
+  def get_add_ons
+    print "Do you want any more add-ons? (y/n): >"
+    
+    case gets.strip
+      when "y"
+        get_add_on
+        get_add_ons
+      when "n"
+  
+      else
+        puts "Invalid selection"
+        get_add_ons
+    end
+    
   end
   
   def get_main_dish
