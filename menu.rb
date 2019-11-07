@@ -27,4 +27,13 @@ class Menu
 
   end
 
+  def print_side_dishes
+    puts "--- Side Dishes ---"
+
+    @side_dishes.each_with_index do |dish, index|
+      puts "#{index + 1}. #{dish.name}"
+    end
+    
+  end
+
 end
