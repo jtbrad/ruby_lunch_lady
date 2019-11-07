@@ -2,10 +2,11 @@ require "pry"
 require "colorize"
 
 class Dish
-  attr_accessor :name
+  attr_accessor :name, :price
 
-  def initialize(name)
+  def initialize(name, price)
     @name = name
+    @price = price
   end
 
 end

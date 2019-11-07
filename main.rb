@@ -7,10 +7,11 @@ class RubyLunchLady
 
   def initialize
     @order = []
-    @main_dishes = [Dish.new("Hamburger")]
-    @side_dishes = [Dish.new("French Fries")]
-    puts "--- Welcome to Ruby's ---".colorize(:red)
+    @main_dishes = [Dish.new("Hamburger", 5.00)]
+    @side_dishes = [Dish.new("French Fries", 1.00)]
+    puts "--- Welcome to Ruby High School Lunch Program ---".colorize(:red)
     get_main_dish
+    get_side_dish
     get_side_dish
     get_order  
   end
@@ -40,11 +41,15 @@ class RubyLunchLady
   end
   
   def get_order
+    cost = 0.00
     puts "You ordered: "
     
     @order.each do |dish|
+      cost += dish.price
       puts dish.name
     end
+
+    puts "Your total is $#{cost}."
     
     puts "Have a nice day!" 
   end
