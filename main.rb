@@ -53,7 +53,7 @@ class RubyLunchLady
   end
   
   def get_add_on
-
+    @menu.print_add_on_dishes
   end
 
   def get_selection(dishes)

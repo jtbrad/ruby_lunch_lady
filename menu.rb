@@ -4,7 +4,7 @@ require "colorize"
 require_relative "dish"
 
 class Menu
-  attr_accessor :main_dishes, :side_dishes
+  attr_accessor :main_dishes, :side_dishes, :add_on_dishes
 
   def initialize
 
@@ -14,6 +14,10 @@ class Menu
 
     @side_dishes = [
       Dish.new("French Fries", 1.00)
+    ]
+
+    @add_on_dishes = [
+      Dish.new("Ice Cream Cone", 1.00)
     ]
 
   end
@@ -33,7 +37,16 @@ class Menu
     @side_dishes.each_with_index do |dish, index|
       puts "#{index + 1}. #{dish.name}"
     end
-    
+
+  end
+
+  def print_add_on_dishes
+    puts "--- Add On Dishes"
+
+    @add_on_dishes.each_with_index do |dish, index|
+      puts "#{index + 1}. #{dish.name}"
+    end
+
   end
 
 end
